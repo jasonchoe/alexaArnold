@@ -117,7 +117,7 @@ function getArnoldQuote(intent, session, callback) {
         "https://www.choad.org/audio/whoisyourdaddy-alexa.mp3",
         "https://www.choad.org/audio/you_are_mine-alexa.mp3"
         ];
-    for (var i=0, t=1; i<t; i++) {
+    for (var i=0, t=16; i<t; i++) {
     temp=Math.round(Math.random() * t);
     }
 
