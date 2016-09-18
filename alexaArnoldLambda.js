@@ -146,50 +146,11 @@ function getArnoldQuote(intent, session, callback) {
     const sessionAttributes = {};
     let shouldEndSession = true;
     let speechOutput = '';
-    //speechOutput = `Jason is the answer.`;
-    speechOutput = "<speak>Incoming Arnold quote."
+    speechOutput = "<speak>"
                 + "<audio src='https://www.choad.org/audio/whoisyourdaddy-alexa.mp3' />"
                 + "</speak>";
     callback(sessionAttributes,
          buildSpeechletResponseAudio(intent.name, speechOutput, shouldEndSession));
-}
-function getTheBest(intent, session, callback) {
-    const repromptText = null;
-    const sessionAttributes = {};
-    let shouldEndSession = true;
-    let speechOutput = '';
-    speechOutput = `Jason is the answer.`;
-    callback(sessionAttributes,
-         buildSpeechletResponse(intent.name, speechOutput, shouldEndSession));
-}
-function getTheOneILove(intent, session, callback) {
-    const repromptText = null;
-    const sessionAttributes = {};
-    let shouldEndSession = true;
-    let speechOutput = '';
-    speechOutput = `Juju is your sweet baby love.`;
-    callback(sessionAttributes,
-         buildSpeechletResponse(intent.name, speechOutput, shouldEndSession));
-}
-
-function getFavNiece(intent, session, callback) {
-    const repromptText = null;
-    const sessionAttributes = {};
-    let shouldEndSession = true;
-    let speechOutput = '';
-    speechOutput = `Your favorite niece is Isabella Rebueno.`;
-    callback(sessionAttributes,
-         buildSpeechletResponse(intent.name, speechOutput, shouldEndSession));
-}
-
-function getFavNephew(intent, session, callback) {
-    const repromptText = null;
-    const sessionAttributes = {};
-    let shouldEndSession = true;
-    let speechOutput = '';
-    speechOutput = `Your favorite nephew is Jonah Rebueno.`;
-    callback(sessionAttributes,
-         buildSpeechletResponse(intent.name, speechOutput, shouldEndSession));
 }
 
 // --------------- Events -----------------------
