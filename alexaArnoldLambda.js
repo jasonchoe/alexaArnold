@@ -98,7 +98,25 @@ function getArnoldQuote(intent, session, callback) {
     let temp = '';
     
     // define list of arnold sources
-    var audiosrc = ["https://www.choad.org/audio/whoisyourdaddy-alexa.mp3", "https://www.choad.org/audio/nodeal-alexa.mp3"];
+    var audiosrc = [
+        "https://www.choad.org/audio/cop-alexa.mp3",
+        "https://www.choad.org/audio/deep_trouble-alexa.mp3",
+        "https://www.choad.org/audio/fist-alexa.mp3",
+        "https://www.choad.org/audio/good_morning-alexa.mp3",
+        "https://www.choad.org/audio/hello_cutie-alexa.mp3",
+        "https://www.choad.org/audio/how_are_you-alexa.mp3",
+        "https://www.choad.org/audio/lack_discipline-alexa.mp3",
+        "https://www.choad.org/audio/mother_talk-alexa.mp3",
+        "https://www.choad.org/audio/nodeal-alexa.mp3",
+        "https://www.choad.org/audio/questions-alexa.mp3",
+        "https://www.choad.org/audio/running_rerun-alexa.mp3",
+        "https://www.choad.org/audio/sob-alexa.mp3",
+        "https://www.choad.org/audio/stop_it-alexa.mp3",
+        "https://www.choad.org/audio/stop_whining_x-alexa.mp3",
+        "https://www.choad.org/audio/whats_the_matter-alexa.mp3",
+        "https://www.choad.org/audio/whoisyourdaddy-alexa.mp3",
+        "https://www.choad.org/audio/you_are_mine-alexa.mp3"
+        ];
     for (var i=0, t=1; i<t; i++) {
     temp=Math.round(Math.random() * t);
     }
