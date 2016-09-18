@@ -1,2 +1,6 @@
 Skill name: alexaArnold
 Invocation name: arnold
+
+Be sure to include your ARN from AWS Lambda
+
+Audio files need to be publicly accessible via https
