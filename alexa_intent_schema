@@ -1,35 +1,10 @@
 {
   "intents": [
     {
-      "intent": "MyColorIsIntent",
-      "slots": [
-        {
-          "name": "Color",
-          "type": "LIST_OF_COLORS"
-        }
-      ]
-    },
-    {
-      "intent": "WhatsMyColorIntent"
-    },
-    {
       "intent": "ArnoldQuote"
-    },
-    {
-      "intent": "WhoIsTheBest"
-    },
-    {
-      "intent": "WhoIsTheOneILove"
-    },
-    {
-      "intent": "WhoIsMyFavNiece"
-    },
-    {
-      "intent": "WhoIsMyFavNephew"
     },
     {
       "intent": "AMAZON.HelpIntent"
     }
   ]
 }
-
