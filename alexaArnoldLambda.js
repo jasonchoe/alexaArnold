@@ -95,8 +95,16 @@ function getArnoldQuote(intent, session, callback) {
     const sessionAttributes = {};
     let shouldEndSession = true;
     let speechOutput = '';
+    let temp = '';
+    
+    // define list of arnold sources
+    var audiosrc = ["https://www.choad.org/audio/whoisyourdaddy-alexa.mp3", "https://www.choad.org/audio/nodeal-alexa.mp3"];
+    for (var i=0, t=1; i<t; i++) {
+    temp=Math.round(Math.random() * t);
+    }
+
     speechOutput = "<speak>"
-                + "<audio src='https://www.choad.org/audio/whoisyourdaddy-alexa.mp3' />"
+                + "<audio src='" + audiosrc[temp] + "' />"
                 + "</speak>";
     callback(sessionAttributes,
          buildSpeechletResponseAudio(intent.name, speechOutput, shouldEndSession));
