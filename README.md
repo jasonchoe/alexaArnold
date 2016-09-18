@@ -5,7 +5,10 @@ Usage: "alexa, ask Arnold for a quote"
 
 Reply: *Who is your daddy and what does he do*
 Skill name: alexaArnold
+
+
 Invocation name: arnold
+
 
 Be sure to include your ARN from AWS Lambda as your service endpoint
 
