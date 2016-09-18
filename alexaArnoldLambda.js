@@ -74,12 +74,7 @@ function getWelcomeResponse(callback) {
     // If we wanted to initialize the session to have some attributes we could add those here.
     const sessionAttributes = {};
     const cardTitle = 'Welcome';
-    const speechOutput = 'Whats up my master';
-    // If the user either does not reply to the welcome message or says something that is not
-    // understood, they will be prompted again with this text.
-    /**const repromptText = 'Please tell me your favorite color by saying, ' +
-        'my favorite color is red';
-    */
+    const speechOutput = 'What is thy bidding, my master';
     const shouldEndSession = false;
 
     callback(sessionAttributes,
@@ -88,59 +83,13 @@ function getWelcomeResponse(callback) {
 
 function handleSessionEndRequest(callback) {
     const cardTitle = 'Session Ended';
-    const speechOutput = 'Thank you for trying the Alexa Skills Kit sample. Have a nice day!';
+    const speechOutput = 'Thank you for trying the Alexa Arnold Skills Kit. Stop whining!';
     // Setting this to true ends the session and exits the skill.
     const shouldEndSession = true;
 
     callback({}, buildSpeechletResponse(cardTitle, speechOutput, null, shouldEndSession));
 }
 
-function createFavoriteColorAttributes(favoriteColor) {
-    return {
-        favoriteColor,
-    };
-}
-
-/**
- * Sets the color in the session and prepares the speech to reply to the user.
- */
-function setColorInSession(intent, session, callback) {
-    const cardTitle = intent.name;
-    const favoriteColorSlot = intent.slots.Color;
-    let repromptText = '';
-    let sessionAttributes = {};
-    const shouldEndSession = false;
-    let speechOutput = '';
-
-    if (favoriteColorSlot) {
-        const favoriteColor = favoriteColorSlot.value;
-        sessionAttributes = createFavoriteColorAttributes(favoriteColor);
-        speechOutput = `I now know your favorite color is ${favoriteColor}. You can ask me ` +
-            "your favorite color by saying, what's my favorite color?";
-        repromptText = "You can ask me your favorite color by saying, what's my favorite color?";
-    } else {
-        speechOutput = "I'm not sure what your favorite color is. Please try again.";
-        repromptText = "I'm not sure what your favorite color is. You can tell me your " +
-            'favorite color by saying, my favorite color is red';
-    }
-
-    callback(sessionAttributes,
-         buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
-}
-
-function getColorFromSession(intent, session, callback) {
-    let favoriteColor;
-    const repromptText = null;
-    const sessionAttributes = {};
-    let shouldEndSession = false;
-    let speechOutput = '';
-
-    if (session.attributes) {
-        favoriteColor = session.attributes.favoriteColor;
-    }
-    callback(sessionAttributes,
-         buildSpeechletResponse(intent.name, speechOutput, repromptText, shouldEndSession));
-}
 function getArnoldQuote(intent, session, callback) {
     const repromptText = null;
     const sessionAttributes = {};
@@ -182,20 +131,8 @@ function onIntent(intentRequest, session, callback) {
     const intentName = intentRequest.intent.name;
 
     // Dispatch to your skill's intent handlers
-    if (intentName === 'MyColorIsIntent') {
-        setColorInSession(intent, session, callback);
-    } else if (intentName === 'WhatsMyColorIntent') {
-        getColorFromSession(intent, session, callback);
-    } else if (intentName === 'WhoIsMyFavNiece') {
-        getFavNiece(intent, session, callback);
-    } else if (intentName === 'WhoIsTheBest') {
-        getTheBest(intent, session, callback);
-    } else if (intentName === 'ArnoldQuote') {
+    if (intentName === 'ArnoldQuote') {
         getArnoldQuote(intent, session, callback);
-    } else if (intentName === 'WhoIsTheOneILove') {
-        getTheOneILove(intent, session, callback);
-    } else if (intentName === 'WhoIsMyFavNephew') {
-        getFavNephew(intent, session, callback);
     } else if (intentName === 'AMAZON.HelpIntent') {
         getWelcomeResponse(callback);
     } else if (intentName === 'AMAZON.StopIntent' || intentName === 'AMAZON.CancelIntent') {
