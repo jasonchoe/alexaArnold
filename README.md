@@ -7,7 +7,7 @@ Reply: *Who is your daddy and what does he do*
 Skill name: Unofficial Arnold Quotes
 
 
-Invocation name: arnold
+Invocation name: arnold fan
 
 
 Be sure to include your ARN from AWS Lambda as your service endpoint
