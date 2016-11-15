@@ -1,10 +1,10 @@
-# Repo for Alexa Arnold skill
+# Repo for Unofficial Arnold Quotes Alexa skill
 This repo contains the necessary files to enable your Echo device to randomly output popular Arnold quotes.
 
-Usage: "alexa, ask Arnold for a quote"
+Usage: "alexa, ask Arnold fan for a quote"
 
 Reply: *Who is your daddy and what does he do*
-Skill name: alexaArnold
+Skill name: Unofficial Arnold Quotes
 
 
 Invocation name: arnold
