@@ -1,10 +1,11 @@
 'use strict';
 
 /**
- *  ArnoldAlexa - Lambda Code
+ *  ArnoldAlexa - Lambda Code - Copyright © 2016 Jason Choe
  *
- *  Version 1.0.1 - 9/17/16 Copyright © 2016 Jason Choe
+ *  Version 1.0.2 - 11/14/16 Edits made to be published
  * 
+ *  Version 1.0.1 - 9/17/16 Initial submission for Alexa published skill
  *  Version 1.0.0 - Initial release
  *  Version 1.0.1 - New quotes added
  * 
@@ -29,8 +30,8 @@ function buildSpeechletResponse(title, output, shouldEndSession) {
         },
         card: {
             type: 'Simple',
-            title: `SessionSpeechlet - ${title}`,
-            content: `SessionSpeechlet - ${output}`,
+            title: `Unofficial Arnold Quotes - ${title}`,
+            content: `Unofficial Arnold Quotes - ${output}`,
         },
         reprompt: {
             outputSpeech: {
@@ -48,8 +49,8 @@ function buildSpeechletResponseAudio(title, output, shouldEndSession) {
         },
         card: {
             type: 'Simple',
-            title: `AudioSessionSpeechlet - ${title}`,
-            content: `SessionSpeechlet - ${output}`,
+            title: `Unofficial Arnold Quotes - incoming`,
+            content: `Unofficial Arnold Quotes - incoming`,
         },
         reprompt: {
             outputSpeech: {
@@ -74,7 +75,7 @@ function getWelcomeResponse(callback) {
     // If we wanted to initialize the session to have some attributes we could add those here.
     const sessionAttributes = {};
     const cardTitle = 'Welcome';
-    const speechOutput = 'What is thy bidding, my master';
+    const speechOutput = 'You can say ask arnold fan for a quote';
     const shouldEndSession = false;
 
     callback(sessionAttributes,
@@ -127,6 +128,7 @@ function getArnoldQuote(intent, session, callback) {
     callback(sessionAttributes,
          buildSpeechletResponseAudio(intent.name, speechOutput, shouldEndSession));
 }
+
 
 // --------------- Events -----------------------
 
